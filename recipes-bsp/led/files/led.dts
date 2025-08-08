@@ -1,0 +1,16 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2711";
+
+    fragment@0 {
+        target-path = "/";
+        __overlay__ {
+            leddriver@0 {
+                compatible = "houssem,leddriver";
+                gpios = <&gpio 19 0>;
+            };
+        };
+    };
+};

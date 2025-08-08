@@ -1,0 +1,18 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2711";
+
+    fragment@0 {
+        target = <&gpio>;
+        __overlay__ {
+            dht11_mmio: dht11@7e200000 {
+                compatible = "myvendor,dht11-mmio";
+                reg = <0x7e200000 0x1000>; /* GPIO base address */
+                gpio-pin = <4>;            /* GPIO number */
+                status = "okay";
+            };
+        };
+    };
+};
